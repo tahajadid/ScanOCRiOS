@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CEFA4FA5C62A7C4D1C9B874 /* Pods_inwiOCRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFA36DE7DBC2DA134A54061F /* Pods_inwiOCRTests.framework */; };
+		8BF3C9B58A5B5DD2EE131CF2 /* Pods_inwiOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3322353E4415650F27BDD95 /* Pods_inwiOCR.framework */; };
 		9C6B92B72801B14800C879FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B92B62801B14800C879FC /* AppDelegate.swift */; };
 		9C6B92B92801B14800C879FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B92B82801B14800C879FC /* SceneDelegate.swift */; };
 		9C6B92BB2801B14800C879FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B92BA2801B14800C879FC /* ViewController.swift */; };
@@ -16,6 +18,11 @@
 		9C6B92CE2801B14A00C879FC /* inwiOCRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B92CD2801B14A00C879FC /* inwiOCRTests.swift */; };
 		9C6B92D82801B14A00C879FC /* inwiOCRUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B92D72801B14A00C879FC /* inwiOCRUITests.swift */; };
 		9C6B92DA2801B14A00C879FC /* inwiOCRUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B92D92801B14A00C879FC /* inwiOCRUITestsLaunchTests.swift */; };
+		9C6B92E92801B63F00C879FC /* natio.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C6B92E82801B63F00C879FC /* natio.jpg */; };
+		9C6B92EB2801B78B00C879FC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B92EA2801B78B00C879FC /* CameraViewController.swift */; };
+		9C6B92ED2801C5C700C879FC /* cnee.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9C6B92EC2801C5C700C879FC /* cnee.jpeg */; };
+		9CB56D362801CA9100486A8F /* MLKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB56D352801CA9100486A8F /* MLKitExtensions.swift */; };
+		D9A92D15967C04A603803C80 /* Pods_inwiOCR_inwiOCRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5587B889290C73BF670C8958 /* Pods_inwiOCR_inwiOCRUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5587B889290C73BF670C8958 /* Pods_inwiOCR_inwiOCRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inwiOCR_inwiOCRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8FCDC40ED78AE665246F89 /* Pods-inwiOCR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inwiOCR.release.xcconfig"; path = "Target Support Files/Pods-inwiOCR/Pods-inwiOCR.release.xcconfig"; sourceTree = "<group>"; };
+		96A2F98E637B11083AC5310D /* Pods-inwiOCR-inwiOCRUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inwiOCR-inwiOCRUITests.debug.xcconfig"; path = "Target Support Files/Pods-inwiOCR-inwiOCRUITests/Pods-inwiOCR-inwiOCRUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C6B92B32801B14800C879FC /* inwiOCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inwiOCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6B92B62801B14800C879FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C6B92B82801B14800C879FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +59,16 @@
 		9C6B92D32801B14A00C879FC /* inwiOCRUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = inwiOCRUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6B92D72801B14A00C879FC /* inwiOCRUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inwiOCRUITests.swift; sourceTree = "<group>"; };
 		9C6B92D92801B14A00C879FC /* inwiOCRUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inwiOCRUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9C6B92E82801B63F00C879FC /* natio.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = natio.jpg; sourceTree = "<group>"; };
+		9C6B92EA2801B78B00C879FC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		9C6B92EC2801C5C700C879FC /* cnee.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cnee.jpeg; sourceTree = "<group>"; };
+		9CB56D352801CA9100486A8F /* MLKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLKitExtensions.swift; sourceTree = "<group>"; };
+		AB7D7C5EAC523D6473076FAD /* Pods-inwiOCR-inwiOCRUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inwiOCR-inwiOCRUITests.release.xcconfig"; path = "Target Support Files/Pods-inwiOCR-inwiOCRUITests/Pods-inwiOCR-inwiOCRUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CB49596DFDE4B5B6B8E0ED5C /* Pods-inwiOCRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inwiOCRTests.release.xcconfig"; path = "Target Support Files/Pods-inwiOCRTests/Pods-inwiOCRTests.release.xcconfig"; sourceTree = "<group>"; };
+		D3322353E4415650F27BDD95 /* Pods_inwiOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inwiOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D94E55B1FF18147A2CE69DF7 /* Pods-inwiOCRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inwiOCRTests.debug.xcconfig"; path = "Target Support Files/Pods-inwiOCRTests/Pods-inwiOCRTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DFA36DE7DBC2DA134A54061F /* Pods_inwiOCRTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inwiOCRTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E53F2CD8A4037F7B925643A4 /* Pods-inwiOCR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inwiOCR.debug.xcconfig"; path = "Target Support Files/Pods-inwiOCR/Pods-inwiOCR.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF3C9B58A5B5DD2EE131CF2 /* Pods_inwiOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CEFA4FA5C62A7C4D1C9B874 /* Pods_inwiOCRTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,19 +92,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A92D15967C04A603803C80 /* Pods_inwiOCR_inwiOCRUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43EDF63CAEE55ECD9AF5A5C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3322353E4415650F27BDD95 /* Pods_inwiOCR.framework */,
+				5587B889290C73BF670C8958 /* Pods_inwiOCR_inwiOCRUITests.framework */,
+				DFA36DE7DBC2DA134A54061F /* Pods_inwiOCRTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9C6B92AA2801B14800C879FC = {
 			isa = PBXGroup;
 			children = (
+				9C6B92E72801B61300C879FC /* Resources */,
 				9C6B92B52801B14800C879FC /* inwiOCR */,
 				9C6B92CC2801B14A00C879FC /* inwiOCRTests */,
 				9C6B92D62801B14A00C879FC /* inwiOCRUITests */,
 				9C6B92B42801B14800C879FC /* Products */,
+				D5090309CC787CC74EFB4C70 /* Pods */,
+				43EDF63CAEE55ECD9AF5A5C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +142,8 @@
 				9C6B92BF2801B14A00C879FC /* Assets.xcassets */,
 				9C6B92C12801B14A00C879FC /* LaunchScreen.storyboard */,
 				9C6B92C42801B14A00C879FC /* Info.plist */,
+				9C6B92EA2801B78B00C879FC /* CameraViewController.swift */,
+				9CB56D352801CA9100486A8F /* MLKitExtensions.swift */,
 			);
 			path = inwiOCR;
 			sourceTree = "<group>";
@@ -127,6 +165,28 @@
 			path = inwiOCRUITests;
 			sourceTree = "<group>";
 		};
+		9C6B92E72801B61300C879FC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C6B92EC2801C5C700C879FC /* cnee.jpeg */,
+				9C6B92E82801B63F00C879FC /* natio.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D5090309CC787CC74EFB4C70 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E53F2CD8A4037F7B925643A4 /* Pods-inwiOCR.debug.xcconfig */,
+				6D8FCDC40ED78AE665246F89 /* Pods-inwiOCR.release.xcconfig */,
+				96A2F98E637B11083AC5310D /* Pods-inwiOCR-inwiOCRUITests.debug.xcconfig */,
+				AB7D7C5EAC523D6473076FAD /* Pods-inwiOCR-inwiOCRUITests.release.xcconfig */,
+				D94E55B1FF18147A2CE69DF7 /* Pods-inwiOCRTests.debug.xcconfig */,
+				CB49596DFDE4B5B6B8E0ED5C /* Pods-inwiOCRTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C6B92DD2801B14A00C879FC /* Build configuration list for PBXNativeTarget "inwiOCR" */;
 			buildPhases = (
+				AEFABF1A332EC6A90E436073 /* [CP] Check Pods Manifest.lock */,
 				9C6B92AF2801B14800C879FC /* Sources */,
 				9C6B92B02801B14800C879FC /* Frameworks */,
 				9C6B92B12801B14800C879FC /* Resources */,
+				AAA1426DB15389F9BE4B347B /* [CP] Embed Pods Frameworks */,
+				12FECA1F5ED403DB4F8372B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -151,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C6B92E02801B14A00C879FC /* Build configuration list for PBXNativeTarget "inwiOCRTests" */;
 			buildPhases = (
+				3E6FA350B94A865A18203289 /* [CP] Check Pods Manifest.lock */,
 				9C6B92C52801B14A00C879FC /* Sources */,
 				9C6B92C62801B14A00C879FC /* Frameworks */,
 				9C6B92C72801B14A00C879FC /* Resources */,
@@ -169,9 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C6B92E32801B14A00C879FC /* Build configuration list for PBXNativeTarget "inwiOCRUITests" */;
 			buildPhases = (
+				095DC60524D5AA820573A625 /* [CP] Check Pods Manifest.lock */,
 				9C6B92CF2801B14A00C879FC /* Sources */,
 				9C6B92D02801B14A00C879FC /* Frameworks */,
 				9C6B92D12801B14A00C879FC /* Resources */,
+				FEFCF73BDF4675B43115EF0C /* [CP] Embed Pods Frameworks */,
+				AAA6AB60F0E7C10A45F05CE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,6 +301,8 @@
 				9C6B92C32801B14A00C879FC /* LaunchScreen.storyboard in Resources */,
 				9C6B92C02801B14A00C879FC /* Assets.xcassets in Resources */,
 				9C6B92BE2801B14800C879FC /* Main.storyboard in Resources */,
+				9C6B92E92801B63F00C879FC /* natio.jpg in Resources */,
+				9C6B92ED2801C5C700C879FC /* cnee.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,13 +322,152 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		095DC60524D5AA820573A625 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-inwiOCR-inwiOCRUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		12FECA1F5ED403DB4F8372B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-inwiOCR/Pods-inwiOCR-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-inwiOCR/Pods-inwiOCR-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-inwiOCR/Pods-inwiOCR-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E6FA350B94A865A18203289 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-inwiOCRTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAA1426DB15389F9BE4B347B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-inwiOCR/Pods-inwiOCR-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-inwiOCR/Pods-inwiOCR-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-inwiOCR/Pods-inwiOCR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAA6AB60F0E7C10A45F05CE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-inwiOCR-inwiOCRUITests/Pods-inwiOCR-inwiOCRUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-inwiOCR-inwiOCRUITests/Pods-inwiOCR-inwiOCRUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-inwiOCR-inwiOCRUITests/Pods-inwiOCR-inwiOCRUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEFABF1A332EC6A90E436073 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-inwiOCR-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEFCF73BDF4675B43115EF0C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-inwiOCR-inwiOCRUITests/Pods-inwiOCR-inwiOCRUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-inwiOCR-inwiOCRUITests/Pods-inwiOCR-inwiOCRUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-inwiOCR-inwiOCRUITests/Pods-inwiOCR-inwiOCRUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9C6B92AF2801B14800C879FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9C6B92BB2801B14800C879FC /* ViewController.swift in Sources */,
+				9C6B92EB2801B78B00C879FC /* CameraViewController.swift in Sources */,
 				9C6B92B72801B14800C879FC /* AppDelegate.swift in Sources */,
+				9CB56D362801CA9100486A8F /* MLKitExtensions.swift in Sources */,
 				9C6B92B92801B14800C879FC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,11 +640,13 @@
 		};
 		9C6B92DE2801B14A00C879FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E53F2CD8A4037F7B925643A4 /* Pods-inwiOCR.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CSPGA9YPWD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = inwiOCR/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -459,11 +669,13 @@
 		};
 		9C6B92DF2801B14A00C879FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D8FCDC40ED78AE665246F89 /* Pods-inwiOCR.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CSPGA9YPWD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = inwiOCR/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -486,6 +698,7 @@
 		};
 		9C6B92E12801B14A00C879FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D94E55B1FF18147A2CE69DF7 /* Pods-inwiOCRTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -505,6 +718,7 @@
 		};
 		9C6B92E22801B14A00C879FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB49596DFDE4B5B6B8E0ED5C /* Pods-inwiOCRTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -524,6 +738,7 @@
 		};
 		9C6B92E42801B14A00C879FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96A2F98E637B11083AC5310D /* Pods-inwiOCR-inwiOCRUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -541,6 +756,7 @@
 		};
 		9C6B92E52801B14A00C879FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB7D7C5EAC523D6473076FAD /* Pods-inwiOCR-inwiOCRUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
