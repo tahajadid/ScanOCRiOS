@@ -10,6 +10,7 @@ import CoreMedia
 
 class ScanInformation {
     
+    
     let vall = "ROYAUM.*|CARTE.*|.*MAROC|.*NATIONA.*|[a-z].*|.*[ä].*|[à].*|.*[~!@#\\$%^&amp;*()_+'{}\\[\\]:;?-].*"
     let reg_dob = "[0-9].*[0-9]"
     let reg_cin = "^[A-Z]+[0-9]+"
@@ -17,6 +18,7 @@ class ScanInformation {
     var resultToShow = ""
 
     func filterResultCinRecto(result : [String]) -> String {
+        resultToShow = ""
         var newResult = [String]()
         
         for element in result {
@@ -44,7 +46,7 @@ class ScanInformation {
             } else if(getFirst){
                 print ("+++++ last name is : \(element)")
                 resultToShow += "last name is : \(element)" + "\n"
-                break
+                return
             }
         }
         
@@ -56,7 +58,7 @@ class ScanInformation {
             if(element.matches(reg_dob)) {
                 print ("+++++ date of birth is : \(element)")
                 resultToShow += "date of birth is : \(element)" + "\n"
-                break
+                return
                 
             }
         }
@@ -70,33 +72,13 @@ class ScanInformation {
                 print ("+++++ cin is : \(element)")
                 resultToShow += "cin is : \(element)" + "\n"
 
-                break
+                return
                 
             }
         }
         
     }
     
-    func respond(invitation: String) {
-        
-      if let range = invitation.range(of: #"\bClue(do)?™?\b"#, options: .regularExpression) {
-        switch invitation[range] {
-        case "Cluedo":
-            print("I'd be delighted to play!")
-        case "Clue":
-            print("Did you mean Cluedo? If so, then yes!")
-        default:
-            fatalError("(Wait... did I mess up my regular expression?)")
-        }
-      } else {
-        print("Still waiting for an invitation to play Cluedo.")
-      }
-    }
-    
-    func checkNumbers(for regex : String, in text: String) -> Bool {
-    
-        return text.matches(regex)
-    }
 
 }
 

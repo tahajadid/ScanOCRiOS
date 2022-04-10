@@ -43,10 +43,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        ScanInformation().respond(invitation: "Fancy a game of Cluedo™?")
-        print(ScanInformation().checkNumbers(for:"[0-9]", in: "mamasodde"))
-        
-        
 
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillDisappear(false)
@@ -174,8 +170,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
             strongSelf.resultsText += "\n"
         }
         
-          strongSelf.resultsText = ScanInformation().filterResultCinRecto(result: strongSelf.listResult)
-          strongSelf.showResults(message :ScanInformation().filterResultCinRecto(result: strongSelf.listResult))
+          //strongSelf.resultsText = ScanInformation().filterResultCinRecto(result: strongSelf.listResult)
+          strongSelf.showResults(message :strongSelf.resultsText)
       }
     }
     
