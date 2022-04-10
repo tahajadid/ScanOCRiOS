@@ -45,7 +45,7 @@
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAv-5X-bD5">
-                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <rect key="frame" x="20" y="802" width="374" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="lCV-vr-iEZ"/>
                                 </constraints>
@@ -59,20 +59,29 @@
                                     <action selector="detectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="axf-yk-19t"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCa-cS-wdb">
+                                <rect key="frame" x="177" y="132" width="60" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.69834183670000005" green="0.072254461899999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" systemColor="labelColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yAv-5X-bD5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5aP-Xx-lyq"/>
+                            <constraint firstItem="yAv-5X-bD5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5aP-Xx-lyq"/>
                             <constraint firstItem="Yuj-OL-IBy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nh7-nI-Ckm"/>
                             <constraint firstItem="Yuj-OL-IBy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OFI-gt-DTL"/>
+                            <constraint firstItem="nCa-cS-wdb" firstAttribute="top" secondItem="Yuj-OL-IBy" secondAttribute="bottom" id="PEL-i1-qQh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yAv-5X-bD5" secondAttribute="bottom" id="Ta3-GL-3cw"/>
                             <constraint firstItem="Yuj-OL-IBy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="V67-Zz-afS"/>
                             <constraint firstItem="yAv-5X-bD5" firstAttribute="top" secondItem="yOp-Zz-u3K" secondAttribute="bottom" id="VIl-PO-0yN"/>
                             <constraint firstItem="Yuj-OL-IBy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XGP-As-qPd"/>
                             <constraint firstItem="yOp-Zz-u3K" firstAttribute="top" secondItem="Yuj-OL-IBy" secondAttribute="bottom" id="act-WO-QzO"/>
                             <constraint firstItem="yOp-Zz-u3K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="crC-Yj-Gv7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yAv-5X-bD5" secondAttribute="trailing" id="ktE-A3-ZXn"/>
+                            <constraint firstItem="nCa-cS-wdb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kkw-WU-lLp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yAv-5X-bD5" secondAttribute="trailing" constant="20" id="ktE-A3-ZXn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yOp-Zz-u3K" secondAttribute="trailing" id="mKK-4f-9tt"/>
                         </constraints>
                     </view>
@@ -123,6 +132,9 @@
     <resources>
         <image name="camera.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

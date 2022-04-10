@@ -10,10 +10,13 @@ import MLKit
 import UIKit
 import Vision
 
+/// Main view controller class.
+@objc(ViewController)
 class ViewController: UIViewController, UINavigationControllerDelegate{
     
     @IBOutlet weak var openCameraTB: UIToolbar!
-    
+    @IBOutlet weak var detectButton: UIBarButtonItem!
+
     /// An image picker for accessing the photo library or camera.
     var imagePicker = UIImagePickerController()
 
@@ -32,12 +35,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
     // Image counter.
     var currentImage = 0
     
+    var listResult = [String]()
+    
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        ScanInformation().respond(invitation: "Fancy a game of Cluedo™?")
+        print(ScanInformation().checkNumbers(for:"[0-9]", in: "mamasodde"))
+        
+        
+
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillDisappear(false)
         
@@ -60,6 +70,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
     @IBAction func detectButton(_ sender: Any) {
         self.resultsText = ""
         detectTextOnDevice(image: imageView.image)
+        print("§§ Image size \(imageView.image?.size)")
     }
     
     @IBAction func openCamera(_ sender: Any) {
@@ -86,7 +97,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
       self.resultsText = ""
     }
     
-    private func showResults() {
+    private func showResults(message : String) {
       let resultsAlertController = UIAlertController(
         title: "Résultats du scan cin",
         message: nil,
@@ -97,8 +108,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
           resultsAlertController.dismiss(animated: true, completion: nil)
         }
       )
-      resultsAlertController.message = resultsText
-      //resultsAlertController.popoverPresentationController?.barButtonItem = detectButton
+      resultsAlertController.message = message
+      resultsAlertController.popoverPresentationController?.barButtonItem = detectButton
       resultsAlertController.popoverPresentationController?.sourceView = self.view
       present(resultsAlertController, animated: true, completion: nil)
       print(resultsText)
@@ -143,7 +154,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
         guard error == nil, let text = text else {
           let errorString = error?.localizedDescription ?? Constants.detectionNoResultsMessage
           strongSelf.resultsText = "Text recognizer failed with error: \(errorString)"
-          strongSelf.showResults()
+          strongSelf.showResults(message: "noth..")
           return
         }
         // Blocks.
@@ -152,17 +163,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
           // Lines.
           for line in block.lines {
 
-              
             // Elements.
             for element in line.elements {
 
               strongSelf.resultsText += element.text + " "
+              strongSelf.listResult.append(element.text)
+            
             }
           }
             strongSelf.resultsText += "\n"
         }
         
-        strongSelf.showResults()
+          strongSelf.resultsText = ScanInformation().filterResultCinRecto(result: strongSelf.listResult)
+          strongSelf.showResults(message :ScanInformation().filterResultCinRecto(result: strongSelf.listResult))
       }
     }
     
@@ -199,7 +212,7 @@ extension ViewController {
   // MARK: - Detection
 
   /// Detects text on the specified image and draws a frame around the recognized text using the text recognizer.
-
+  ///
   /// - Parameter image: The image.
   private func detectTextOnDevice(image: UIImage?) {
     guard let image = image else { return }

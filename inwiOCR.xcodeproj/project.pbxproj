@@ -22,6 +22,7 @@
 		9C6B92EB2801B78B00C879FC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B92EA2801B78B00C879FC /* CameraViewController.swift */; };
 		9C6B92ED2801C5C700C879FC /* cnee.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9C6B92EC2801C5C700C879FC /* cnee.jpeg */; };
 		9CB56D362801CA9100486A8F /* MLKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB56D352801CA9100486A8F /* MLKitExtensions.swift */; };
+		9CB56D382802300C00486A8F /* ScanInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB56D372802300C00486A8F /* ScanInformation.swift */; };
 		D9A92D15967C04A603803C80 /* Pods_inwiOCR_inwiOCRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5587B889290C73BF670C8958 /* Pods_inwiOCR_inwiOCRUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		9C6B92EA2801B78B00C879FC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		9C6B92EC2801C5C700C879FC /* cnee.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cnee.jpeg; sourceTree = "<group>"; };
 		9CB56D352801CA9100486A8F /* MLKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLKitExtensions.swift; sourceTree = "<group>"; };
+		9CB56D372802300C00486A8F /* ScanInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanInformation.swift; sourceTree = "<group>"; };
 		AB7D7C5EAC523D6473076FAD /* Pods-inwiOCR-inwiOCRUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inwiOCR-inwiOCRUITests.release.xcconfig"; path = "Target Support Files/Pods-inwiOCR-inwiOCRUITests/Pods-inwiOCR-inwiOCRUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CB49596DFDE4B5B6B8E0ED5C /* Pods-inwiOCRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inwiOCRTests.release.xcconfig"; path = "Target Support Files/Pods-inwiOCRTests/Pods-inwiOCRTests.release.xcconfig"; sourceTree = "<group>"; };
 		D3322353E4415650F27BDD95 /* Pods_inwiOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inwiOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 				9C6B92C42801B14A00C879FC /* Info.plist */,
 				9C6B92EA2801B78B00C879FC /* CameraViewController.swift */,
 				9CB56D352801CA9100486A8F /* MLKitExtensions.swift */,
+				9CB56D372802300C00486A8F /* ScanInformation.swift */,
 			);
 			path = inwiOCR;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C6B92BB2801B14800C879FC /* ViewController.swift in Sources */,
+				9CB56D382802300C00486A8F /* ScanInformation.swift in Sources */,
 				9C6B92EB2801B78B00C879FC /* CameraViewController.swift in Sources */,
 				9C6B92B72801B14800C879FC /* AppDelegate.swift in Sources */,
 				9CB56D362801CA9100486A8F /* MLKitExtensions.swift in Sources */,
