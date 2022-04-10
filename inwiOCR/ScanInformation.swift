@@ -19,6 +19,7 @@ class ScanInformation {
 
     func filterResultCinRecto(result : [String]) -> String {
         resultToShow = ""
+        print(result)
         var newResult = [String]()
         
         for element in result {

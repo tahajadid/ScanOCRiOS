@@ -142,6 +142,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
     
     func process(_ visionImage: VisionImage, with textRecognizer: TextRecognizer?) {
       weak var weakSelf = self
+      listResult = [String]()
+
       textRecognizer?.process(visionImage) { text, error in
         guard let strongSelf = weakSelf else {
           print("Self is nil!")
@@ -169,8 +171,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
           }
             strongSelf.resultsText += "\n"
         }
-        
-          //strongSelf.resultsText = ScanInformation().filterResultCinRecto(result: strongSelf.listResult)
+
+          strongSelf.resultsText = ScanInformation().filterResultCinRecto(result: strongSelf.listResult)          
           strongSelf.showResults(message :strongSelf.resultsText)
       }
     }
