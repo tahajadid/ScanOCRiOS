@@ -17,9 +17,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
     @IBOutlet weak var openCameraTB: UIToolbar!
     @IBOutlet weak var detectButton: UIBarButtonItem!
 
+    @IBOutlet weak var versoBtn: UIButton!
+    @IBOutlet weak var rectoBtn: UIButton!
+    
+    @IBOutlet weak var tblForm: UITableView!
+    
     /// An image picker for accessing the photo library or camera.
     var imagePicker = UIImagePickerController()
 
+    var cinRecto = false
+    var cinVerso = false
+    
     /// An overlay view that displays detection annotations.
     private lazy var annotationOverlayView: UIView = {
       precondition(isViewLoaded)
@@ -66,7 +74,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
     @IBAction func detectButton(_ sender: Any) {
         self.resultsText = ""
         detectTextOnDevice(image: imageView.image)
-        print("§§ Image size \(imageView.image?.size)")
     }
     
     @IBAction func openCamera(_ sender: Any) {
@@ -87,6 +94,30 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true)
     }
+    
+    
+    @IBAction func rectoBtnAction(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            versoBtn.isSelected = false
+        } else {
+            sender.isSelected = true
+            versoBtn.isSelected = false
+        }
+    }
+    
+    
+    @IBAction func versoBtnAction(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            rectoBtn.isSelected = false
+
+        } else {
+            sender.isSelected = true
+            rectoBtn.isSelected = false
+        }
+    }
+    
     
     /// Clears the results text view and removes any frames that are visible.
     private func clearResults() {

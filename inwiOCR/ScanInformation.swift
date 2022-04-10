@@ -11,7 +11,7 @@ import CoreMedia
 class ScanInformation {
     
     
-    let vall = "ROYAUM.*|CARTE.*|.*MAROC|.*NATIONA.*|[a-z].*|.*[ä].*|[à].*|.*[~!@#\\$%^&amp;*()_+'{}\\[\\]:;?-].*"
+    let vall = "OYAUM.*|CARTE.*|.*AROC|.*NATIONA|.*ENTITE.*|[a-z].*|.*[ä].*|[à].*|.*[~!@#\\$%^&amp;*()_+'{}\\[\\]:;?-].*"
     let reg_dob = "[0-9].*[0-9]"
     let reg_cin = "^[A-Z]+[0-9]+"
 
