@@ -171,88 +171,158 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
       }
     }
     
-    func process(_ visionImage: VisionImage, with textRecognizer: TextRecognizer?) {
-      weak var weakSelf = self
-      listResult = [String]()
+    func processRecto(_ visionImage: VisionImage, with textRecognizer: TextRecognizer?) {
+        weak var weakSelf = self
+        listResult = [String]()
 
-      textRecognizer?.process(visionImage) { text, error in
-        guard let strongSelf = weakSelf else {
-          print("Self is nil!")
-          return
-        }
-        guard error == nil, let text = text else {
-          let errorString = error?.localizedDescription ?? Constants.detectionNoResultsMessage
-          strongSelf.resultsText = "Text recognizer failed with error: \(errorString)"
-          strongSelf.showResults(message: "noth..")
-          return
-        }
-        // Blocks.
-        for block in text.blocks {
-
-          // Lines.
-          for line in block.lines {
-
-            // Elements.
-            for element in line.elements {
-
-              strongSelf.resultsText += element.text + " "
-              strongSelf.listResult.append(element.text)
-            
-            }
+        textRecognizer?.process(visionImage) { text, error in
+          guard let strongSelf = weakSelf else {
+            print("Self is nil!")
+            return
           }
-            strongSelf.resultsText += "\n"
+          guard error == nil, let text = text else {
+            let errorString = error?.localizedDescription ?? Constants.detectionNoResultsMessage
+            strongSelf.resultsText = "Text recognizer failed with error: \(errorString)"
+            strongSelf.showResults(message: "noth..")
+            return
+          }
+          // Blocks.
+          for block in text.blocks {
+
+            // Lines.
+            for line in block.lines {
+
+              // Elements.
+              for element in line.elements {
+
+                strongSelf.resultsText += element.text + " "
+                strongSelf.listResult.append(element.text)
+              
+              }
+            }
+              strongSelf.resultsText += "\n"
+          }
+            
+            self.parseDataToShow(list : strongSelf.listResult)
+
         }
-
-          strongSelf.resultsText = ScanInformation().filterResultCinRecto(result: strongSelf.listResult)          
-          strongSelf.showResults(message :strongSelf.resultsText)
       }
-    }
-    
-}
+      
+      func processVerso(_ visionImage: VisionImage, with textRecognizer: TextRecognizer?) {
+        weak var weakSelf = self
+        listResult = [String]()
 
+        textRecognizer?.process(visionImage) { text, error in
+          guard let strongSelf = weakSelf else {
+            print("Self is nil!")
+            return
+          }
+          guard error == nil, let text = text else {
+            let errorString = error?.localizedDescription ?? Constants.detectionNoResultsMessage
+            strongSelf.resultsText = "Text recognizer failed with error: \(errorString)"
+            strongSelf.showResults(message: "noth..")
+            return
+          }
+          // Blocks.
+          for block in text.blocks {
 
-// MARK: - UIImagePickerControllerDelegate
+            // Lines.
+            for line in block.lines {
 
-extension ViewController: UIImagePickerControllerDelegate {
+              // Elements.
+              for element in line.elements {
 
-  func imagePickerController(
-    _ picker: UIImagePickerController,
-    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
-  ) {
-    // Local variable inserted by Swift 4.2 migrator.
-    let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+                strongSelf.resultsText += element.text + " "
+              
+              }
+                strongSelf.listResult.append(line.text)
 
-    clearResults()
-    if let pickedImage =
-      info[
-        convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)]
-      as? UIImage
-    {
-      updateImageView(with: pickedImage)
-    }
-    dismiss(animated: true)
+            }
+              strongSelf.resultsText += "\n"
+          }
+            
+            self.parseDataToShow(list : strongSelf.listResult)
+
+        }
+      }
+      
+      func parseDataToShow(list : [String]){
+          
+          if(self.versoBtn.isSelected){
+              // if user select the recto face
+              print(self.resultsText)
+              self.resultsText = ScanInformation().filterResultCinVerso(result: self.listResult)
+              self.showResults(message :self.resultsText)
+              
+          }else if (self.rectoBtn.isSelected){
+              // if user select the verso face
+              self.resultsText = ScanInformation().filterResultCinRecto(result: self.listResult)
+              self.showResults(message :self.resultsText)
+          }else {
+              // if nothing selected
+              self.showResults(message :self.resultsText)
+          }
+      }
+      
   }
-}
 
 
-/// Extension of ViewController for On-Device detection.
-extension ViewController {
+  // MARK: - UIImagePickerControllerDelegate
 
-  // MARK: - Detection
+  extension ViewController: UIImagePickerControllerDelegate {
 
-  /// Detects text on the specified image and draws a frame around the recognized text using the text recognizer.
-  ///
-  /// - Parameter image: The image.
-  private func detectTextOnDevice(image: UIImage?) {
-    guard let image = image else { return }
-    let textRecognizer = TextRecognizer.textRecognizer()
+    func imagePickerController(
+      _ picker: UIImagePickerController,
+      didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+    ) {
+      // Local variable inserted by Swift 4.2 migrator.
+      let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
-    // Initialize a `VisionImage` object with the given `UIImage`.
-    let visionImage = VisionImage(image: image)
-    visionImage.orientation = image.imageOrientation
+      clearResults()
+      if let pickedImage =
+        info[
+          convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)]
+        as? UIImage
+      {
+          self.imageView.image = pickedImage
+          //updateImageView(with: pickedImage)
+      }
+      dismiss(animated: true)
+    }
+  }
 
-    self.resultsText += "Running Text Recognition...\n"
-    process(visionImage, with: textRecognizer)
+
+  /// Extension of ViewController for On-Device detection.
+  extension ViewController {
+
+    // MARK: - Detection
+
+    /// Detects text on the specified image and draws a frame around the recognized text using the text recognizer.
+    ///
+    /// - Parameter image: The image.
+    private func detectTextOnDevice(image: UIImage?) {
+      guard let image = image else { return }
+      let textRecognizer = TextRecognizer.textRecognizer()
+
+      // Initialize a `VisionImage` object with the given `UIImage`.
+      let visionImage = VisionImage(image: image)
+      visionImage.orientation = image.imageOrientation
+
+      self.resultsText += "Running Text Recognition...\n"
+        
+        if(self.versoBtn.isSelected){
+            // if user select the verso face
+            processVerso(visionImage, with: textRecognizer)
+            
+        }else if (self.rectoBtn.isSelected){
+            // if user select the verso face
+            processRecto(visionImage, with: textRecognizer)
+
+        }else {
+            // if nothing selected
+            processRecto(visionImage, with: textRecognizer)
+      }
+      
   }
 }
 

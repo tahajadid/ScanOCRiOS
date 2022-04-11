@@ -9,21 +9,19 @@ import Foundation
 import CoreMedia
 
 class ScanInformation {
-    
-    
-    let vall = "OYAUM.*|CARTE.*|.*AROC|.*NATIONA|.*ENTITE.*|[a-z].*|.*[ä].*|[à].*|.*[~!@#\\$%^&amp;*()_+'{}\\[\\]:;?-].*"
-    let reg_dob = "[0-9].*[0-9]"
-    let reg_cin = "^[A-Z]+[0-9]+"
 
-    var resultToShow = ""
+    var resultForRecto = ""
+    var resultForVerso = ""
 
+    // MARK - Recto Face
+    
     func filterResultCinRecto(result : [String]) -> String {
-        resultToShow = ""
+        resultForRecto = ""
         print(result)
         var newResult = [String]()
         
         for element in result {
-            if(!element.matches(vall)) {
+            if(!element.matches(LocalizedConst.reg_rightData)) {
                 newResult.append(element)
             }
         }
@@ -32,7 +30,7 @@ class ScanInformation {
         getDOB(result : newResult)
         getCIN(result : newResult)
         
-        return resultToShow
+        return resultForRecto
 
     }
     
@@ -41,12 +39,12 @@ class ScanInformation {
         for element in result {
             if(!getFirst && element.count>2) {
                 print ("+++++ first name is : \(element)")
-                resultToShow += "first name is : \(element)" + "\n"
+                resultForRecto += "first name is : \(element)" + "\n"
                 getFirst = true
                 
             } else if(getFirst){
                 print ("+++++ last name is : \(element)")
-                resultToShow += "last name is : \(element)" + "\n"
+                resultForRecto += "last name is : \(element)" + "\n"
                 return
             }
         }
@@ -56,9 +54,9 @@ class ScanInformation {
     func getDOB(result : [String]){
         
         for element in result {
-            if(element.matches(reg_dob)) {
+            if(element.matches(LocalizedConst.reg_dob)) {
                 print ("+++++ date of birth is : \(element)")
-                resultToShow += "date of birth is : \(element)" + "\n"
+                resultForRecto += "date of birth is : \(element)" + "\n"
                 return
                 
             }
@@ -69,15 +67,80 @@ class ScanInformation {
     func getCIN(result : [String]){
         
         for element in result {
-            if(element.matches(reg_cin)) {
+            if(element.matches(LocalizedConst.reg_cin)) {
                 print ("+++++ cin is : \(element)")
-                resultToShow += "cin is : \(element)" + "\n"
+                resultForRecto += "cin is : \(element)" + "\n"
 
                 return
                 
             }
         }
         
+    }
+    
+    // MARK - Verso Face
+
+    func filterResultCinVerso(result : [String]) -> String {
+        resultForVerso = ""
+        print(result)
+        var newResult = [String]()
+        
+        for element in result {
+
+            newResult.append(element)
+            
+        }
+        
+        // getMRZ(result : newResult)
+        getAdress(result : newResult)
+        getSexe(result : newResult)
+        
+        return resultForVerso
+
+    }
+    
+    func getMRZ(result : [String]){
+        for element in result {
+            if(element.matches(LocalizedConst.reg_mrz)) {
+                print ("+++++ mrz is : \(element)")
+                resultForVerso += "mrz is : \(element)" + "\n"
+                return
+                
+            }
+        }
+    }
+    
+    func getAdress(result : [String]){
+        for element in result {
+            print("to show --- .\(result)")
+            if(element.matches(LocalizedConst.reg_adress)) {
+                print ("+++++ adress is : \(element)")
+                resultForVerso += "adress is : \(element.replacingOccurrences(of: "Adresse", with: ""))" + "\n"
+                break
+                
+            }
+        }
+    }
+    
+    func getSexe(result : [String]){
+        var tempSexe : String
+        for element in result {
+            tempSexe = element
+            if(element.matches(LocalizedConst.reg_sexe)) {
+                print("§ First element \(element) && second \(result[result.firstIndex(of: element)!+1])")
+                if(tempSexe == "M" || result[result.firstIndex(of: element)!+1] == "M"){
+                    print ("+++++ sexe is : \(element)")
+                    resultForVerso += "sexe is : Male" + "\n"
+                    break
+                }else if(tempSexe == "F" || result[result.firstIndex(of: element)!+1] == "F") {
+                    print ("+++++ sexe is : \(element)")
+                    resultForVerso += "sexe is : Female" + "\n"
+                    break
+                } else {
+                    break
+                }
+            }
+        }
     }
     
 
