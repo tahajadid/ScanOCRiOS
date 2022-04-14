@@ -207,7 +207,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
       }
     }
     
-    func processRecto(_ visionImage: VisionImage, with textRecognizer: TextRecognizer?) {
+    func process(_ visionImage: VisionImage, with textRecognizer: TextRecognizer?) {
         weak var weakSelf = self
         listResult = [String]()
 
@@ -246,44 +246,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
     
     
       
-      func processVerso(_ visionImage: VisionImage, with textRecognizer: TextRecognizer?) {
-        weak var weakSelf = self
-        listResult = [String]()
-
-        textRecognizer?.process(visionImage) { text, error in
-          guard let strongSelf = weakSelf else {
-            print("Self is nil!")
-            return
-          }
-          guard error == nil, let text = text else {
-            let errorString = error?.localizedDescription ?? Constants.detectionNoResultsMessage
-            strongSelf.resultsText = "Text recognizer failed with error: \(errorString)"
-            strongSelf.showResults(message: "noth..")
-            return
-          }
-          // Blocks.
-          for block in text.blocks {
-
-            // Lines.
-            for line in block.lines {
-
-              // Elements.
-              for element in line.elements {
-
-                strongSelf.resultsText += element.text + " "
-              
-              }
-                strongSelf.listResult.append(line.text)
-
-            }
-              strongSelf.resultsText += "\n"
-          }
-            
-            self.parseDataToShow(list : strongSelf.listResult)
-
-        }
-      }
-      
       func parseDataToShow(list : [String]){
           
           if(self.versoBtn.isSelected){
@@ -300,6 +262,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
           }else if (self.passBtn.isSelected){
               // if user select the passport scan
               self.resultsText = ScanInformationPassport().filterResultPassport(result: self.listResult)
+              self.showResults(message :self.resultsText)
+              
+          }else if (self.simBtn.isSelected){
+              // if user select the passport scan
+              self.resultsText = ScanInformationSim().filterResultSim(result: self.listResult)
               self.showResults(message :self.resultsText)
               
           }else {
@@ -332,14 +299,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
           //updateImageView(with: pickedImage)
       }
       dismiss(animated: true)
+        
+      // Auto detection after finishing picking the image
+      self.resultsText = ""
+      detectTextOnDevice(image: imageView.image)
+        
     }
   }
 
 
+  // MARK: - Detection
   /// Extension of ViewController for On-Device detection.
   extension ViewController {
 
-    // MARK: - Detection
 
     /// Detects text on the specified image and draws a frame around the recognized text using the text recognizer.
     ///
@@ -354,26 +326,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
 
       self.resultsText += "Running Text Recognition...\n"
         
-        if(self.versoBtn.isSelected){
-            // if user select the verso face
-            processVerso(visionImage, with: textRecognizer)
-            
-        }else if (self.rectoBtn.isSelected){
-            // if user select the verso face
-            processRecto(visionImage, with: textRecognizer)
-            
-        }else if (self.passBtn.isSelected){
-            // if user select the verso face
-            processRecto(visionImage, with: textRecognizer)
-
-        }else {
-            // if nothing selected
-            processRecto(visionImage, with: textRecognizer)
-      }
+      process(visionImage, with: textRecognizer)
       
   }
 }
 
+//MARK: - Constants
 private enum Constants {
   // static let images = ["image_has_text.jpg"]
   

@@ -15,7 +15,7 @@ class ScanInformationSim {
 
     // MARK - Recto Face
     
-    func filterResultCinRecto(result : [String]) -> String {
+    func filterResultSim(result : [String]) -> String {
         resultForSim = ""
         print(result)
         var newResult = [String]()
@@ -26,27 +26,41 @@ class ScanInformationSim {
             }
         }
         
-        let resultFinal = getSim(result : newResult)
-        print("[Result sim] :  \(resultFinal)")
+        // Filter to get all the numbers detected
+        for element in result {
+            if(element.matches(LocalizedConst.reg_sim)) {
+                numberScanSim.append(element)
+            }
+        }
         
+        getMdn(result : newResult)
+        getICC(result : newResult)
+
         return resultForSim
 
     }
     
     
-    func getSim(result : [String]) -> [String]{
+    func getMdn(result : [String]){
         
         for element in result {
-            if(element.matches(LocalizedConst.reg_sim)) {
-                numberScanSim.append(element)
-                print ("+++++ date of birth is : \(element)")
-                resultForSim += "date of birth is : \(element)" + "\n"
+            if(element.count == 10){
+                resultForSim += "MDN est : \(element) \n"
+                break
             }
         }
-        
-        return numberScanSim
-        
     }
+    
+    func getICC(result : [String]){
+        
+        for element in result {
+            if(element.count == 18){
+                resultForSim += "ICC est : \(element)"
+                break
+            }
+        }
+    }
+    
 
 
 

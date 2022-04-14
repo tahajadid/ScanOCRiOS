@@ -243,8 +243,18 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydp-eX-ONT">
                                 <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OCR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rn5-D9-2tS">
+                                        <rect key="frame" x="113.5" y="180" width="73.5" height="52"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="40"/>
+                                        <color key="textColor" white="0.93999999999999995" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
+                                    <constraint firstItem="Rn5-D9-2tS" firstAttribute="centerX" secondItem="Ydp-eX-ONT" secondAttribute="centerX" id="AuH-xb-Jip"/>
                                     <constraint firstAttribute="height" constant="300" id="Q5U-ID-46O"/>
+                                    <constraint firstItem="Rn5-D9-2tS" firstAttribute="top" secondItem="Ydp-eX-ONT" secondAttribute="top" constant="180" id="nsl-mx-3tI"/>
                                     <constraint firstAttribute="width" constant="300" id="uOb-4l-HM2"/>
                                 </constraints>
                             </view>
