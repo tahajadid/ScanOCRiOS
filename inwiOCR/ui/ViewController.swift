@@ -17,6 +17,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
     @IBOutlet weak var openCameraTB: UIToolbar!
     @IBOutlet weak var detectButton: UIBarButtonItem!
 
+    @IBOutlet weak var simBtn: UIButton!
+    @IBOutlet weak var passBtn: UIButton!
     @IBOutlet weak var versoBtn: UIButton!
     @IBOutlet weak var rectoBtn: UIButton!
     
@@ -25,8 +27,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
     /// An image picker for accessing the photo library or camera.
     var imagePicker = UIImagePickerController()
 
-    var cinRecto = false
-    var cinVerso = false
     
     /// An overlay view that displays detection annotations.
     private lazy var annotationOverlayView: UIView = {
@@ -49,8 +49,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
+        // Hide Navigation controller
+        navigationController?.isNavigationBarHidden = true
 
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillDisappear(false)
@@ -74,6 +75,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
     @IBAction func detectButton(_ sender: Any) {
         self.resultsText = ""
         detectTextOnDevice(image: imageView.image)
+
     }
     
     @IBAction func openCamera(_ sender: Any) {
@@ -100,9 +102,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
         if sender.isSelected {
             sender.isSelected = false
             versoBtn.isSelected = false
+            passBtn.isSelected = false
+            simBtn.isSelected = false
         } else {
             sender.isSelected = true
             versoBtn.isSelected = false
+            passBtn.isSelected = false
+            simBtn.isSelected = false
         }
     }
     
@@ -111,13 +117,43 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
         if sender.isSelected {
             sender.isSelected = false
             rectoBtn.isSelected = false
-
+            passBtn.isSelected = false
+            simBtn.isSelected = false
         } else {
             sender.isSelected = true
             rectoBtn.isSelected = false
+            passBtn.isSelected = false
+            simBtn.isSelected = false
         }
     }
     
+    @IBAction func passBtnAction(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            versoBtn.isSelected = false
+            rectoBtn.isSelected = false
+            simBtn.isSelected = false
+        } else {
+            sender.isSelected = true
+            versoBtn.isSelected = false
+            rectoBtn.isSelected = false
+            simBtn.isSelected = false
+        }
+    }
+    
+    @IBAction func simBtnAction(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            versoBtn.isSelected = false
+            rectoBtn.isSelected = false
+            passBtn.isSelected = false
+        } else {
+            sender.isSelected = true
+            versoBtn.isSelected = false
+            rectoBtn.isSelected = false
+            passBtn.isSelected = false
+        }
+    }
     
     /// Clears the results text view and removes any frames that are visible.
     private func clearResults() {
@@ -207,6 +243,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
 
         }
       }
+    
+    
       
       func processVerso(_ visionImage: VisionImage, with textRecognizer: TextRecognizer?) {
         weak var weakSelf = self
@@ -251,13 +289,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
           if(self.versoBtn.isSelected){
               // if user select the recto face
               print(self.resultsText)
-              self.resultsText = ScanInformation().filterResultCinVerso(result: self.listResult)
+              self.resultsText = ScanInformationCin().filterResultCinVerso(result: self.listResult)
               self.showResults(message :self.resultsText)
               
           }else if (self.rectoBtn.isSelected){
               // if user select the verso face
-              self.resultsText = ScanInformation().filterResultCinRecto(result: self.listResult)
+              self.resultsText = ScanInformationCin().filterResultCinRecto(result: self.listResult)
               self.showResults(message :self.resultsText)
+              
+          }else if (self.passBtn.isSelected){
+              // if user select the passport scan
+              self.resultsText = ScanInformationPassport().filterResultPassport(result: self.listResult)
+              self.showResults(message :self.resultsText)
+              
           }else {
               // if nothing selected
               self.showResults(message :self.resultsText)
@@ -317,6 +361,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
         }else if (self.rectoBtn.isSelected){
             // if user select the verso face
             processRecto(visionImage, with: textRecognizer)
+            
+        }else if (self.passBtn.isSelected){
+            // if user select the verso face
+            processRecto(visionImage, with: textRecognizer)
 
         }else {
             // if nothing selected
@@ -329,7 +377,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
 private enum Constants {
   // static let images = ["image_has_text.jpg"]
   
-  static let images = ["natio.jpg"]
+  static let images = ["sim_card.jpg"]
   static let detectionNoResultsMessage = "No results returned."
   static let failedToDetectObjectsMessage = "Failed to detect objects in image."
 }

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1CEFA4FA5C62A7C4D1C9B874 /* Pods_inwiOCRTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFA36DE7DBC2DA134A54061F /* Pods_inwiOCRTests.framework */; };
 		8BF3C9B58A5B5DD2EE131CF2 /* Pods_inwiOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3322353E4415650F27BDD95 /* Pods_inwiOCR.framework */; };
+		9C0BB0B828083B5C00155291 /* sim_card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C0BB0B728083B5C00155291 /* sim_card.jpg */; };
+		9C0BB0BA28083D5A00155291 /* ScanInformationSim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0BB0B928083D5A00155291 /* ScanInformationSim.swift */; };
+		9C5A07CC280459F5005CFACC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5A07CB280459F5005CFACC /* SplashViewController.swift */; };
+		9C5A07CE28045A40005CFACC /* inwi_Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C5A07CD28045A40005CFACC /* inwi_Animation.json */; };
 		9C6B92B72801B14800C879FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B92B62801B14800C879FC /* AppDelegate.swift */; };
 		9C6B92B92801B14800C879FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B92B82801B14800C879FC /* SceneDelegate.swift */; };
 		9C6B92BB2801B14800C879FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B92BA2801B14800C879FC /* ViewController.swift */; };
@@ -22,8 +26,14 @@
 		9C6B92EB2801B78B00C879FC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B92EA2801B78B00C879FC /* CameraViewController.swift */; };
 		9C6B92ED2801C5C700C879FC /* cnee.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9C6B92EC2801C5C700C879FC /* cnee.jpeg */; };
 		9CB56D362801CA9100486A8F /* MLKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB56D352801CA9100486A8F /* MLKitExtensions.swift */; };
-		9CB56D382802300C00486A8F /* ScanInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB56D372802300C00486A8F /* ScanInformation.swift */; };
+		9CB56D382802300C00486A8F /* ScanInformationCin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB56D372802300C00486A8F /* ScanInformationCin.swift */; };
 		9CBE959028042AE000B3D5E9 /* LocalizedConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBE958F28042AE000B3D5E9 /* LocalizedConst.swift */; };
+		9CD3E6352805895400A5416F /* back_mrz.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9CD3E6342805895400A5416F /* back_mrz.jpg */; };
+		9CD3E63728058EE100A5416F /* new_back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9CD3E63628058EE100A5416F /* new_back.jpg */; };
+		9CD3E63A280591C400A5416F /* ScanInformationPassport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3E639280591C400A5416F /* ScanInformationPassport.swift */; };
+		9CD3E63D2805932B00A5416F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3E63C2805932B00A5416F /* StringExtension.swift */; };
+		9CD3E63F280595DE00A5416F /* pass.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9CD3E63E280595DE00A5416F /* pass.jpg */; };
+		9CD3E6842806D4E600A5416F /* pass2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9CD3E6832806D4E600A5416F /* pass2.jpeg */; };
 		D9A92D15967C04A603803C80 /* Pods_inwiOCR_inwiOCRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5587B889290C73BF670C8958 /* Pods_inwiOCR_inwiOCRUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +58,10 @@
 		5587B889290C73BF670C8958 /* Pods_inwiOCR_inwiOCRUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inwiOCR_inwiOCRUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8FCDC40ED78AE665246F89 /* Pods-inwiOCR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inwiOCR.release.xcconfig"; path = "Target Support Files/Pods-inwiOCR/Pods-inwiOCR.release.xcconfig"; sourceTree = "<group>"; };
 		96A2F98E637B11083AC5310D /* Pods-inwiOCR-inwiOCRUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inwiOCR-inwiOCRUITests.debug.xcconfig"; path = "Target Support Files/Pods-inwiOCR-inwiOCRUITests/Pods-inwiOCR-inwiOCRUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9C0BB0B728083B5C00155291 /* sim_card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sim_card.jpg; sourceTree = "<group>"; };
+		9C0BB0B928083D5A00155291 /* ScanInformationSim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanInformationSim.swift; sourceTree = "<group>"; };
+		9C5A07CB280459F5005CFACC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		9C5A07CD28045A40005CFACC /* inwi_Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = inwi_Animation.json; sourceTree = "<group>"; };
 		9C6B92B32801B14800C879FC /* inwiOCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inwiOCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C6B92B62801B14800C879FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C6B92B82801B14800C879FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,8 +79,14 @@
 		9C6B92EA2801B78B00C879FC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		9C6B92EC2801C5C700C879FC /* cnee.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cnee.jpeg; sourceTree = "<group>"; };
 		9CB56D352801CA9100486A8F /* MLKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLKitExtensions.swift; sourceTree = "<group>"; };
-		9CB56D372802300C00486A8F /* ScanInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanInformation.swift; sourceTree = "<group>"; };
+		9CB56D372802300C00486A8F /* ScanInformationCin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanInformationCin.swift; sourceTree = "<group>"; };
 		9CBE958F28042AE000B3D5E9 /* LocalizedConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedConst.swift; sourceTree = "<group>"; };
+		9CD3E6342805895400A5416F /* back_mrz.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back_mrz.jpg; sourceTree = "<group>"; };
+		9CD3E63628058EE100A5416F /* new_back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = new_back.jpg; sourceTree = "<group>"; };
+		9CD3E639280591C400A5416F /* ScanInformationPassport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanInformationPassport.swift; sourceTree = "<group>"; };
+		9CD3E63C2805932B00A5416F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		9CD3E63E280595DE00A5416F /* pass.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pass.jpg; sourceTree = "<group>"; };
+		9CD3E6832806D4E600A5416F /* pass2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pass2.jpeg; sourceTree = "<group>"; };
 		AB7D7C5EAC523D6473076FAD /* Pods-inwiOCR-inwiOCRUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inwiOCR-inwiOCRUITests.release.xcconfig"; path = "Target Support Files/Pods-inwiOCR-inwiOCRUITests/Pods-inwiOCR-inwiOCRUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CB49596DFDE4B5B6B8E0ED5C /* Pods-inwiOCRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inwiOCRTests.release.xcconfig"; path = "Target Support Files/Pods-inwiOCRTests/Pods-inwiOCRTests.release.xcconfig"; sourceTree = "<group>"; };
 		D3322353E4415650F27BDD95 /* Pods_inwiOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inwiOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,17 +159,18 @@
 		9C6B92B52801B14800C879FC /* inwiOCR */ = {
 			isa = PBXGroup;
 			children = (
+				9CD3E6822806CB7700A5416F /* ui */,
+				9CD3E63B2805931800A5416F /* extension */,
+				9CD3E6382805919500A5416F /* dataScan */,
 				9C6B92B62801B14800C879FC /* AppDelegate.swift */,
 				9C6B92B82801B14800C879FC /* SceneDelegate.swift */,
-				9C6B92BA2801B14800C879FC /* ViewController.swift */,
 				9C6B92BC2801B14800C879FC /* Main.storyboard */,
 				9C6B92BF2801B14A00C879FC /* Assets.xcassets */,
 				9C6B92C12801B14A00C879FC /* LaunchScreen.storyboard */,
 				9C6B92C42801B14A00C879FC /* Info.plist */,
-				9C6B92EA2801B78B00C879FC /* CameraViewController.swift */,
 				9CB56D352801CA9100486A8F /* MLKitExtensions.swift */,
-				9CB56D372802300C00486A8F /* ScanInformation.swift */,
 				9CBE958F28042AE000B3D5E9 /* LocalizedConst.swift */,
+				9C5A07CD28045A40005CFACC /* inwi_Animation.json */,
 			);
 			path = inwiOCR;
 			sourceTree = "<group>";
@@ -174,10 +195,43 @@
 		9C6B92E72801B61300C879FC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9C0BB0B728083B5C00155291 /* sim_card.jpg */,
+				9CD3E6832806D4E600A5416F /* pass2.jpeg */,
+				9CD3E63E280595DE00A5416F /* pass.jpg */,
+				9CD3E63628058EE100A5416F /* new_back.jpg */,
+				9CD3E6342805895400A5416F /* back_mrz.jpg */,
 				9C6B92EC2801C5C700C879FC /* cnee.jpeg */,
 				9C6B92E82801B63F00C879FC /* natio.jpg */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9CD3E6382805919500A5416F /* dataScan */ = {
+			isa = PBXGroup;
+			children = (
+				9CB56D372802300C00486A8F /* ScanInformationCin.swift */,
+				9CD3E639280591C400A5416F /* ScanInformationPassport.swift */,
+				9C0BB0B928083D5A00155291 /* ScanInformationSim.swift */,
+			);
+			path = dataScan;
+			sourceTree = "<group>";
+		};
+		9CD3E63B2805931800A5416F /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				9CD3E63C2805932B00A5416F /* StringExtension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		9CD3E6822806CB7700A5416F /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				9C5A07CB280459F5005CFACC /* SplashViewController.swift */,
+				9C6B92BA2801B14800C879FC /* ViewController.swift */,
+				9C6B92EA2801B78B00C879FC /* CameraViewController.swift */,
+			);
+			path = ui;
 			sourceTree = "<group>";
 		};
 		D5090309CC787CC74EFB4C70 /* Pods */ = {
@@ -305,8 +359,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C6B92C32801B14A00C879FC /* LaunchScreen.storyboard in Resources */,
+				9C0BB0B828083B5C00155291 /* sim_card.jpg in Resources */,
 				9C6B92C02801B14A00C879FC /* Assets.xcassets in Resources */,
+				9CD3E6352805895400A5416F /* back_mrz.jpg in Resources */,
 				9C6B92BE2801B14800C879FC /* Main.storyboard in Resources */,
+				9CD3E63F280595DE00A5416F /* pass.jpg in Resources */,
+				9CD3E6842806D4E600A5416F /* pass2.jpeg in Resources */,
+				9C5A07CE28045A40005CFACC /* inwi_Animation.json in Resources */,
+				9CD3E63728058EE100A5416F /* new_back.jpg in Resources */,
 				9C6B92E92801B63F00C879FC /* natio.jpg in Resources */,
 				9C6B92ED2801C5C700C879FC /* cnee.jpeg in Resources */,
 			);
@@ -471,12 +531,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C6B92BB2801B14800C879FC /* ViewController.swift in Sources */,
-				9CB56D382802300C00486A8F /* ScanInformation.swift in Sources */,
+				9CB56D382802300C00486A8F /* ScanInformationCin.swift in Sources */,
+				9CD3E63D2805932B00A5416F /* StringExtension.swift in Sources */,
 				9C6B92EB2801B78B00C879FC /* CameraViewController.swift in Sources */,
+				9C0BB0BA28083D5A00155291 /* ScanInformationSim.swift in Sources */,
 				9C6B92B72801B14800C879FC /* AppDelegate.swift in Sources */,
+				9CD3E63A280591C400A5416F /* ScanInformationPassport.swift in Sources */,
 				9CB56D362801CA9100486A8F /* MLKitExtensions.swift in Sources */,
 				9C6B92B92801B14800C879FC /* SceneDelegate.swift in Sources */,
 				9CBE959028042AE000B3D5E9 /* LocalizedConst.swift in Sources */,
+				9C5A07CC280459F5005CFACC /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
