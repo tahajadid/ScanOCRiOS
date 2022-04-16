@@ -176,6 +176,18 @@
                                     <constraint firstAttribute="height" constant="2" id="OIL-qH-eXM"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGW-hk-z8I">
+                                <rect key="frame" x="321" y="763" width="79" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="Ils-OR-r8B"/>
+                                    <constraint firstAttribute="height" constant="31" id="uPf-cY-tVR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go Scan"/>
+                                <connections>
+                                    <action selector="goScanBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FRt-pt-X8G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -191,6 +203,8 @@
                             <constraint firstItem="bG0-4Z-x0n" firstAttribute="top" secondItem="fQq-IB-2s7" secondAttribute="bottom" constant="14" id="G2g-2y-FTR"/>
                             <constraint firstItem="CSK-EJ-Zde" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="H09-Ak-79c"/>
                             <constraint firstItem="CSK-EJ-Zde" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="H6Z-js-4rM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nGW-hk-z8I" secondAttribute="trailing" constant="14" id="IPg-QY-wC5"/>
+                            <constraint firstItem="yAv-5X-bD5" firstAttribute="top" secondItem="nGW-hk-z8I" secondAttribute="bottom" constant="8" symbolic="YES" id="KWi-GY-PWM"/>
                             <constraint firstItem="yaU-pQ-XH8" firstAttribute="leading" secondItem="BkH-BN-JPY" secondAttribute="trailing" constant="7" id="LYy-aF-aba"/>
                             <constraint firstItem="Yuj-OL-IBy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nh7-nI-Ckm"/>
                             <constraint firstItem="Yuj-OL-IBy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OFI-gt-DTL"/>

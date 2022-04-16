@@ -78,6 +78,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
 
     }
     
+    @IBAction func goScanBtn(_ sender: UIButton) {
+        self.navigationController?.pushViewController(PreveiwViewController(), animated: true)
+    }
+    
     @IBAction func openCamera(_ sender: Any) {
         
         guard
@@ -88,8 +92,35 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
           return
         }
         
+//        imagePicker.sourceType = .camera
+        
+        
         imagePicker.sourceType = .camera
+        imagePicker.cameraCaptureMode = .photo
+        imagePicker.allowsEditing = true
+        imagePicker.showsCameraControls = false
+        
+        let mView = TestCamera()
+        mView.delegate = self
+        if let rect = self.imagePicker.cameraOverlayView?.frame {
+            mView.frame = rect
+        }
+        imagePicker.cameraOverlayView = mView
+        
+        let screenSize = UIScreen.main.bounds.size
+        let ratio: CGFloat = 4.0 / 3.0
+        let cameraHeight: CGFloat = screenSize.width * ratio
+        let scale: CGFloat = screenSize.height / cameraHeight
+        
+        self.imagePicker.cameraViewTransform = CGAffineTransform(translationX: 0, y: (screenSize.height - cameraHeight) / 2.0)
+        self.imagePicker.cameraViewTransform = self.imagePicker.cameraViewTransform.scaledBy(x: scale, y: scale)
+        
+        //let heightCapture = UIScreen.main.bounds.width *  0.6
+        //let topSpace = UIScreen.main.bounds.height * 0.13
+        
         present(imagePicker, animated: true)
+
+        
     }
     
     @IBAction func openLibraryPhoto(_ sender: Any) {
@@ -153,6 +184,72 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
             rectoBtn.isSelected = false
             passBtn.isSelected = false
         }
+    }
+    
+    
+    
+    
+    func myCrop(image : UIImage) -> UIImage {
+        
+        
+        
+        // change this value as you want!
+        let rectToCrop = CGRect(x: 130, y: 300, width: 150, height: 300)
+        let croppedImage: UIImage
+        
+        let factor = imageView.frame.width/image.size.width
+        let rect = CGRect(x: rectToCrop.origin.x / factor, y: rectToCrop.origin.y / factor, width: rectToCrop.width / factor, height: rectToCrop.height / factor)
+        croppedImage = cropImage1(image: image, rect: rect)
+       
+        
+        //let originalFrame = imageView.frame
+        //let croppedFrame = CGRect(x: originalFrame.origin.x + rectToCrop.origin.x, y: originalFrame.origin.y + rectToCrop.origin.y, width: rectToCrop.width, height: rectToCrop.height)
+        
+        return croppedImage
+        
+    }
+    
+    func cropImage1(image: UIImage, rect: CGRect) -> UIImage {
+        let cgImage = image.cgImage!
+        let croppedCGImage = cgImage.cropping(to: rect)
+        return UIImage(cgImage: croppedCGImage!, scale: image.scale, orientation: image.imageOrientation)
+    }
+    
+    
+    
+    func cropToBounds(image: UIImage, width: Double, height: Double) -> UIImage {
+        
+        let contextImage: UIImage = UIImage(cgImage: image.cgImage!)
+        
+        let contextSize: CGSize = contextImage.size
+        
+        var posX: CGFloat = 0.0
+        var posY: CGFloat = 0.0
+        var cgwidth: CGFloat = CGFloat(width)
+        var cgheight: CGFloat = CGFloat(height)
+        
+        // See what size is longer and create the center off of that
+        if contextSize.width > contextSize.height {
+            posX = ((contextSize.width - contextSize.height) / 2)
+            posY = 0
+            cgwidth = contextSize.height
+            cgheight = contextSize.height
+        } else {
+            posX = 0
+            posY = ((contextSize.height - contextSize.width) / 2)
+            cgwidth = contextSize.width
+            cgheight = contextSize.width
+        }
+        
+        let rect: CGRect = CGRect(x: posX, y: posY, width: cgwidth, height: cgheight)
+        
+        // Create bitmap image from context using the rect
+        let imageRef: CGImage = contextImage.cgImage!.cropping(to: rect)!
+        
+        // Create a new image based on the imageRef and rotate back to the original orientation
+        let image: UIImage = UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
+        
+        return image
     }
     
     /// Clears the results text view and removes any frames that are visible.
@@ -295,8 +392,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
           convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)]
         as? UIImage
       {
-          self.imageView.image = pickedImage
-          //updateImageView(with: pickedImage)
+//          let newpic = cropToBounds(image: pickedImage, width: 100.0, height: 100.0)
+          let newpic = myCrop(image: pickedImage)
+          self.imageView.image = newpic
+          updateImageView(with: newpic)
       }
       dismiss(animated: true)
         
@@ -329,6 +428,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate{
       process(visionImage, with: textRecognizer)
       
   }
+      
+    
 }
 
 //MARK: - Constants
@@ -352,5 +453,15 @@ private func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerCon
   -> String
 {
   return input.rawValue
+}
+
+extension ViewController: CameraFrontViewDelegate {
+    func onClickCaptureButtonCamera() {
+        self.imagePicker.takePicture()
+    }
+    
+    func onClickBackButtonCamera() {
+        self.imagePicker.dismiss(animated: true, completion: nil)
+    }
 }
 

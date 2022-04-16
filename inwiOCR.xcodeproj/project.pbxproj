@@ -11,6 +11,12 @@
 		8BF3C9B58A5B5DD2EE131CF2 /* Pods_inwiOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3322353E4415650F27BDD95 /* Pods_inwiOCR.framework */; };
 		9C0BB0B828083B5C00155291 /* sim_card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C0BB0B728083B5C00155291 /* sim_card.jpg */; };
 		9C0BB0BA28083D5A00155291 /* ScanInformationSim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0BB0B928083D5A00155291 /* ScanInformationSim.swift */; };
+		9C0BB0BC28084E1300155291 /* TestCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0BB0BB28084E1300155291 /* TestCamera.swift */; };
+		9C0BB0BE2808668400155291 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0BB0BD2808668400155291 /* UIViewExtension.swift */; };
+		9C0BB0C028086C7D00155291 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0BB0BF28086C7D00155291 /* UILabelExtension.swift */; };
+		9C0BB0C3280875CC00155291 /* PreveiwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0BB0C1280875CC00155291 /* PreveiwViewController.swift */; };
+		9C0BB0C4280875CC00155291 /* PreveiwViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C0BB0C2280875CC00155291 /* PreveiwViewController.xib */; };
+		9C2003FA2809A8E400557C05 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2003F92809A8E400557C05 /* UIColorExtension.swift */; };
 		9C5A07CC280459F5005CFACC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5A07CB280459F5005CFACC /* SplashViewController.swift */; };
 		9C5A07CE28045A40005CFACC /* inwi_Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C5A07CD28045A40005CFACC /* inwi_Animation.json */; };
 		9C6B92B72801B14800C879FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B92B62801B14800C879FC /* AppDelegate.swift */; };
@@ -60,6 +66,12 @@
 		96A2F98E637B11083AC5310D /* Pods-inwiOCR-inwiOCRUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inwiOCR-inwiOCRUITests.debug.xcconfig"; path = "Target Support Files/Pods-inwiOCR-inwiOCRUITests/Pods-inwiOCR-inwiOCRUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C0BB0B728083B5C00155291 /* sim_card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sim_card.jpg; sourceTree = "<group>"; };
 		9C0BB0B928083D5A00155291 /* ScanInformationSim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanInformationSim.swift; sourceTree = "<group>"; };
+		9C0BB0BB28084E1300155291 /* TestCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCamera.swift; sourceTree = "<group>"; };
+		9C0BB0BD2808668400155291 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		9C0BB0BF28086C7D00155291 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		9C0BB0C1280875CC00155291 /* PreveiwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreveiwViewController.swift; sourceTree = "<group>"; };
+		9C0BB0C2280875CC00155291 /* PreveiwViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreveiwViewController.xib; sourceTree = "<group>"; };
+		9C2003F92809A8E400557C05 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		9C5A07CB280459F5005CFACC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		9C5A07CD28045A40005CFACC /* inwi_Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = inwi_Animation.json; sourceTree = "<group>"; };
 		9C6B92B32801B14800C879FC /* inwiOCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inwiOCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +232,9 @@
 			isa = PBXGroup;
 			children = (
 				9CD3E63C2805932B00A5416F /* StringExtension.swift */,
+				9C0BB0BD2808668400155291 /* UIViewExtension.swift */,
+				9C0BB0BF28086C7D00155291 /* UILabelExtension.swift */,
+				9C2003F92809A8E400557C05 /* UIColorExtension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -230,6 +245,9 @@
 				9C5A07CB280459F5005CFACC /* SplashViewController.swift */,
 				9C6B92BA2801B14800C879FC /* ViewController.swift */,
 				9C6B92EA2801B78B00C879FC /* CameraViewController.swift */,
+				9C0BB0BB28084E1300155291 /* TestCamera.swift */,
+				9C0BB0C1280875CC00155291 /* PreveiwViewController.swift */,
+				9C0BB0C2280875CC00155291 /* PreveiwViewController.xib */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -361,6 +379,7 @@
 				9C6B92C32801B14A00C879FC /* LaunchScreen.storyboard in Resources */,
 				9C0BB0B828083B5C00155291 /* sim_card.jpg in Resources */,
 				9C6B92C02801B14A00C879FC /* Assets.xcassets in Resources */,
+				9C0BB0C4280875CC00155291 /* PreveiwViewController.xib in Resources */,
 				9CD3E6352805895400A5416F /* back_mrz.jpg in Resources */,
 				9C6B92BE2801B14800C879FC /* Main.storyboard in Resources */,
 				9CD3E63F280595DE00A5416F /* pass.jpg in Resources */,
@@ -534,10 +553,15 @@
 				9CB56D382802300C00486A8F /* ScanInformationCin.swift in Sources */,
 				9CD3E63D2805932B00A5416F /* StringExtension.swift in Sources */,
 				9C6B92EB2801B78B00C879FC /* CameraViewController.swift in Sources */,
+				9C0BB0C3280875CC00155291 /* PreveiwViewController.swift in Sources */,
+				9C0BB0C028086C7D00155291 /* UILabelExtension.swift in Sources */,
+				9C0BB0BC28084E1300155291 /* TestCamera.swift in Sources */,
 				9C0BB0BA28083D5A00155291 /* ScanInformationSim.swift in Sources */,
 				9C6B92B72801B14800C879FC /* AppDelegate.swift in Sources */,
 				9CD3E63A280591C400A5416F /* ScanInformationPassport.swift in Sources */,
 				9CB56D362801CA9100486A8F /* MLKitExtensions.swift in Sources */,
+				9C2003FA2809A8E400557C05 /* UIColorExtension.swift in Sources */,
+				9C0BB0BE2808668400155291 /* UIViewExtension.swift in Sources */,
 				9C6B92B92801B14800C879FC /* SceneDelegate.swift in Sources */,
 				9CBE959028042AE000B3D5E9 /* LocalizedConst.swift in Sources */,
 				9C5A07CC280459F5005CFACC /* SplashViewController.swift in Sources */,
